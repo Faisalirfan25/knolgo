@@ -1,0 +1,666 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    background-color: #F0F3FF;
+  }
+  
+  nav {
+    background: #F0F3FF;
+    color: #252641;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px 20px;
+    /* Add padding to the top and bottom */
+  }
+  
+  nav .mainMenu {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav .mainMenu li {
+    position: relative;
+  }
+  
+  nav .mainMenu li a {
+    position: relative;
+    margin-right: 50px;
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #252641;
+    font-size: 18px;
+    transition: 0.2s ease;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.54px;
+  }
+  
+  nav .mainMenu li a:hover {
+    background-color: #4ed7a9;
+    padding: 15px;
+    border-radius: 30px;
+  }
+  
+  nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+  }
+  
+  nav .mainMenu .closeMenu,
+  .icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .fa-facebook {
+    color: rgb(0, 110, 255);
+  }
+  
+  .fa-twitter {
+    color: rgb(86, 154, 243);
+  }
+  
+  .fa-instagram {
+    color: rgb(255, 0, 191);
+  }
+  
+  .fa-linkedin {
+    color: rgb(0, 110, 255);
+  }
+  
+  nav .logo img {
+    margin-left: 35px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  #active {
+    background-color: #4ed7a9;
+    padding: 13px;
+    border-radius: 20px;
+    color: #fff;
+  }
+  
+  @media (max-width: 800px) {
+    nav .mainMenu li {
+      margin-left: 50px;
+    }
+  
+    nav .mainMenu {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 10;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #F0F3FF;
+      transition: top 1s ease 0s;
+      display: none;
+    }
+  
+    nav .mainMenu.show {
+      display: flex;
+    }
+  
+    nav .mainMenu .closeMenu {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  
+    nav .openMenu {
+      display: block;
+    }
+  
+    nav .mainMenu li a:hover {
+      background: #4ED7A9;
+      color: #252641;
+    }
+  
+    .icons i {
+      display: inline-block;
+      padding: 12px;
+      margin-top: 15px;
+    }
+  }
+
+h1{
+    font-weight: 100;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+
+ /* Default styles for larger screens */
+.image-container {
+    display: flex;
+    align-items: center;
+    margin-left: 130px; /* Center images vertically */
+}
+
+.left-image {
+    max-width: 50%;
+    margin: 5px;  /* Set the left image to take up half the container width */
+}
+
+.right-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;  /* Set the left image to take up half the container width */
+    /* Center right images horizontally */
+}
+
+.image {
+    max-width: 100%; /* Ensure images don't exceed their container's width */
+    margin-bottom: 10px;
+    margin: 5px; /* Set the left image to take up half the container width */
+    /* Add 10px spacing between the images */
+}
+
+.additional-image {
+    max-width: 50%;
+    margin: 5px; /* Set the left image to take up half the container width */
+    /* Set the additional image to take up half the container width */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        margin-left: 0; /* Remove the left margin for stacking */
+    }
+
+    .left-image, .right-images, .additional-image {
+        max-width: 90%; /* Make all images take full width on smaller screens */
+        margin: 5px; /* Add spacing between stacked images */
+    }
+}
+
+.container {
+  margin-top: 20px;
+  border-radius: 30px;
+  background: rgba(201, 213, 255, 0.76);
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container {
+      width: 100%; /* Make the container take full width on smaller screens */
+      margin-left: 0; /* Remove the left margin for smaller screens */
+      padding: 10px; /* Add padding to maintain readability on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 36px; /* Adjust line height for smaller screens */
+  }
+}
+
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;/* Center images horizontally */
+}
+
+.image{
+  max-width: 100%; /* Ensure images don't exceed their container's width */
+   /* Add spacing between images */
+  flex: 0 0 calc(33.33% - 10px); /* Distribute images evenly in a row with spacing */
+  box-sizing: border-box; /* Include margin in the width calculation */
+  border-radius: 40px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .image {
+      flex: 0 0 calc(50% - 10px);
+      height: 200px;
+      width: 300px; /* On smaller screens, display two images in a row */
+  }
+}
+
+
+.container2 {
+  margin-top: 20px;
+  border-radius: 30px;
+  background: #D2EEDC;
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container2 {
+      width: 100%; /* Make the container take full width on smaller screens */
+      margin-left: 0; /* Remove the left margin for smaller screens */
+      padding: 10px; /* Add padding to maintain readability on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 36px; /* Adjust line height for smaller screens */
+  }
+}
+
+
+.container3 {
+  margin-top: 20px;
+  border-radius: 30px;
+background: #FFD7DE;
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container3 {
+      width: 100%; /* Make the container take full width on smaller screens */
+      margin-left: 0; /* Remove the left margin for smaller screens */
+      padding: 10px; /* Add padding to maintain readability on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 36px; /* Adjust line height for smaller screens */
+  }
+}
+
+
+.container4 {
+  margin-top: 20px;
+  border-radius: 30px;
+  background: #E6FFB1;  
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container4 {
+      width: 100%; /* Make the container take full width on smaller screens */
+      margin-left: 0; /* Remove the left margin for smaller screens */
+      padding: 10px; /* Add padding to maintain readability on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 36px; /* Adjust line height for smaller screens */
+  }
+}
+
+
+.container5 {
+  margin-top: 20px;
+  border-radius: 30px;
+  background: #FFE7AA;  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container5 {
+      width: 100%; /* Make the container take full width on smaller screens */
+      margin-left: 0; /* Remove the left margin for smaller screens */
+      padding: 10px; /* Add padding to maintain readability on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 36px; /* Adjust line height for smaller screens */
+  }
+}
+
+
+
+.container6 {
+  margin-top: 20px;
+  border-radius: 30px;
+  background: #D1CAFF;
+    text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container6 {
+      width: 100%; /* Make the container take full width on smaller screens */
+      margin-left: 0; /* Remove the left margin for smaller screens */
+      padding: 10px; /* Add padding to maintain readability on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 36px; /* Adjust line height for smaller screens */
+  }
+}
+
+
+.container7 {
+  margin-top: 20px;
+  border-radius: 30px;
+  background: #F7DFFF;  
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container7 {
+      width: 100%; /* Make the container take full width on smaller screens */
+      margin-left: 0; /* Remove the left margin for smaller screens */
+      padding: 10px; /* Add padding to maintain readability on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 36px; /* Adjust line height for smaller screens */
+  }
+}
+
+
+.container8 {
+  margin-top: 20px;
+  border-radius: 30px;
+  background: #DFFFFD;  
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container8 {
+      width: 100%; /* Make the container take full width on smaller screens */
+      margin-left: 0; /* Remove the left margin for smaller screens */
+      padding: 10px; /* Add padding to maintain readability on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 36px; /* Adjust line height for smaller screens */
+  }
+}
+
+
+.container9 {
+  margin-top: 20px;
+  border-radius: 30px;
+  background: #F6FFDD;
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  width: 90%;
+  margin-left: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .container9 {
+      width: 100%; /* Make the container take full width on smaller screens */
+      margin-left: 0; /* Remove the left margin for smaller screens */
+      padding: 10px; /* Add padding to maintain readability on smaller screens */
+      font-size: 18px; /* Adjust font size for smaller screens */
+      line-height: 36px; /* Adjust line height for smaller screens */
+  }
+}
+
+
+.Join {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #c5d4e3;
+  width: 50%;
+  margin: 0 auto; /* Center the div horizontally */
+  height: 200px;
+  border-radius: 50px;
+}
+
+.Join h1 {
+  font-size: 30px; /* Set the font size for the heading */
+}
+
+/* Style for the icon */
+.Join a {
+  display: flex; /* Center the icon vertically */
+  align-items: center; /* Center the icon horizontally */
+  margin-top: 10px; /* Add some space below the heading */
+}
+
+.Join i.fa-arrow-right {
+  font-size: 30px; /* Make the icon a bit bigger */
+  margin-left: 10px; /* Add some spacing between the text and icon */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .Join {
+    width: 90%;
+    height: 100px; /* Adjust the height to fit content on smaller screens */
+  }
+
+  /* Adjust other styles as needed for smaller screens */
+  .Join h1 {
+    font-size: 18px; /* Reduce the font size for smaller screens */
+  }
+
+  /* Make the icon a bit bigger for smaller screens */
+  .Join i.fa-arrow-right {
+    font-size: 28px; /* Increase the icon size for smaller screens */
+  }
+}
+
+
+
+footer {
+  background-color: black;
+  color: white;
+  height: 400px;
+  padding: 20px;
+  display: flex; /* Add flex to the footer */
+  flex-direction: column; /* Column layout for content */
+  justify-content: space-between; /* Space evenly between content and footer-bottom */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  max-width: 300px;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-links {
+  margin-top: 10px; /* Reduced gap */
+  margin-left: 500px;
+  text-align: right; /* Align links to the right */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+/* Change the color of all links to white */
+.footer-links a {
+  color: white;
+  text-decoration: none; /* Remove underlines */
+}
+
+.additional-links {
+  margin-top: 10px; /* Reduced gap */
+  margin-right: 50px;
+  text-align: right; /* Align links to the right */
+}
+
+.additional-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.additional-links ul li {
+  margin-bottom: 10px;
+}
+
+/* Change the color of all links to white */
+.additional-links a {
+  color: white;
+  text-decoration: none; /* Remove underlines */
+}
+
+.footer-bottom {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-bottom-links a {
+  color: white;
+  font-size: 14px; /* Reduce font size for smaller screens */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px; /* Reduce font size for smaller screens */
+}
+
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-bottom ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer-social {
+  margin-top: 60px;
+}
+
+.footer-social i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+.footer{
+  max-height: 100%;
+}
+.footer-links {
+      margin-left: 0; /* Reset margin for smaller screens */
+      text-align: left; /* Align links to the left */
+      font-size: 12px; /* Reduce font size further for smaller screens */
+
+  }
+
+  .additional-links {
+      margin-right: 0; /* Reset margin for smaller screens */
+      text-align: left; /* Align links to the left */
+      font-size: 12px; /* Reduce font size further for smaller screens */
+
+      
+
+  }
+  .footer-container p{
+    font-size: 12px;
+  }
+  .footer-logo {
+    max-width: 100px;
+  }
+  
+  .footer-bottom-links a {
+      font-size: 8px
+      px; /* Reduce font size further for smaller screens */
+  }
+
+  .footer-bottom p {
+      font-size: 8px; /* Reduce font size further for smaller screens */
+  }
+}

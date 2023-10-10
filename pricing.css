@@ -1,0 +1,590 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    background-color: #F0F3FF;
+  }
+  
+  nav {
+    background: #F0F3FF;
+    color: #252641;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px 20px;
+    /* Add padding to the top and bottom */
+  }
+  
+  nav .mainMenu {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav .mainMenu li {
+    position: relative;
+  }
+  
+  nav .mainMenu li a {
+    position: relative;
+    margin-right: 50px;
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #252641;
+    font-size: 18px;
+    transition: 0.2s ease;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.54px;
+  }
+  
+  nav .mainMenu li a:hover {
+    background-color: #4ed7a9;
+    padding: 15px;
+    border-radius: 30px;
+  }
+  
+  nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+  }
+  
+  nav .mainMenu .closeMenu,
+  .icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .fa-facebook {
+    color: rgb(0, 110, 255);
+  }
+  
+  .fa-twitter {
+    color: rgb(86, 154, 243);
+  }
+  
+  .fa-instagram {
+    color: rgb(255, 0, 191);
+  }
+  
+  .fa-linkedin {
+    color: rgb(0, 110, 255);
+  }
+  
+  nav .logo img {
+    margin-left: 35px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  #active {
+    background-color: #4ed7a9;
+    padding: 13px;
+    border-radius: 20px;
+    color: #fff;
+  }
+  
+  @media (max-width: 800px) {
+    nav .mainMenu li {
+      margin-left: 50px;
+    }
+  
+    nav .mainMenu {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 10;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #F0F3FF;
+      transition: top 1s ease 0s;
+      display: none;
+    }
+  
+    nav .mainMenu.show {
+      display: flex;
+    }
+  
+    nav .mainMenu .closeMenu {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  
+    nav .openMenu {
+      display: block;
+    }
+  
+    nav .mainMenu li a:hover {
+      background: #4ED7A9;
+      color: #252641;
+    }
+  
+    .icons i {
+      display: inline-block;
+      padding: 12px;
+      margin-top: 15px;
+    }
+  }
+
+
+  
+  .form {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.form h1 {
+    font-size: 24px;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group input {
+    width: 25%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+    text-align: left;
+}
+.form-group input#age {
+    width: 15%; /* Use full width on smaller screens */
+}
+
+.form-group button {
+    background-color:#4ED7A9;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .form-group input {
+        width: 80%; /* Adjust the width for smaller screens */
+    }
+    .form-group input#age {
+        width: 30%; /* Use full width on smaller screens */
+    }
+    .form-group button {
+        width: 50%; /* Adjust the width for smaller screens */
+    }
+}
+
+.heading{
+  text-align: center;
+}
+/* Center the pricing section vertically and horizontally */
+.pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #000000;
+   
+    /* Set your background color here */
+}
+
+/* Style for each pricing item */
+.pricing-item {
+  width: 100%;
+  max-width: 330px; /* Adjust the maximum width as needed */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
+  text-align: left;
+  border-radius: 30px;
+  border-top-color: #4ED7A9 ;
+  border-top-width: 10px;
+
+
+   /* Align text content to the left */
+}
+/* Style for the join button inside the pricing item */
+.pricing-item .join-button {
+  text-align: center; /* Center the button */
+  margin-top: 20px;
+}
+/* Add this CSS to reduce the size of the SVG icons */
+.check-icon {
+    width: 16px; /* Adjust the width as needed */
+    height: 16px; /* Adjust the height as needed */
+    margin-right: 8px; /* Add some spacing between the icon and text */
+}
+
+/* Package name styling */
+.pricing-package h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Price styling */
+.pricing-price {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.pricing-currency {
+    font-weight: 1500;
+}
+
+.pricing-period {
+    font-size: 14px;
+    color: #666;
+}
+.Friendly{
+  font-size: 15px;
+}
+
+/* Feature list styling */
+.pricing-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pricing-features li {
+    margin-bottom: 10px;
+}
+
+/* Join button styling */
+.join-button {
+    margin-top: 20px;
+}
+
+.join-link {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #303339;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.join-link:hover {
+  background: #303339;
+}
+
+/* Media queries for responsiveness */
+@media screen and (min-width: 768px) {
+    .pricing {
+        flex-direction: row; /* Display in rows for larger screens */
+        align-items: flex-start; /* Align items to the top */
+    }
+
+    .pricing h1 {
+        margin-top: 20px; /* Adjust the margin-top for larger screens */
+    }
+
+    .pricing-item {
+        width: calc(33.33% - 40px); /* Adjust the percentage as needed */
+        margin: 20px;
+    }
+}
+/* Default styles for all screens */
+.section {
+  font-family: 'poppins', sans-serif;
+  font-weight: 600;
+
+  width: 100%;
+  height: 100vh;
+  background-color: #F0F3FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.accordion-item {
+  background-color: #F0F3FF;
+  border-radius: .4rem;
+}
+
+.accordion-item hr {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.accordion-link {
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  background-color: #F0F3FF;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.accordion-link h3 {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.accordion-link i {
+  color: #000000;
+  padding: .5rem;
+}
+
+.accordion-link ul {
+  display: flex;
+  align-items: flex-end;
+  list-style-type: none;
+  margin-left: 25px;
+}
+
+.accordion-link li {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 0 0 1px 5px;
+}
+
+.accordion-link div {
+  display: flex;
+}
+
+.accordion-link .ion-md-arrow-down {
+  display: none;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #F0F3FF;
+  transition: max-height 650ms;
+}
+
+.answer p {
+  color: #000000;
+  font-size: 15px;
+  padding: 2rem;
+}
+
+.accordion-item:target .answer {
+  max-height: 20rem;
+}
+
+.accordion-item:target .accordion-link .ion-md-arrow-forward {
+  display: none
+}
+
+.accordion-item:target .accordion-link .ion-md-arrow-down {
+  display: block;
+}
+
+/* Media query for responsiveness on small screens */
+@media screen and (max-width: 767px) {
+  .section{
+    margin-top: 300px;
+  }
+  .accordion-link {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .accordion-link h3 {
+    margin-bottom: 10px;
+  }
+
+  .accordion-link ul {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .accordion-link li {
+    font-size: 14px;
+  }
+
+  .answer p {
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+footer {
+  background-color: black;
+  color: white;
+  height: 400px;
+  padding: 20px;
+  display: flex; /* Add flex to the footer */
+  flex-direction: column; /* Column layout for content */
+  justify-content: space-between; /* Space evenly between content and footer-bottom */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  max-width: 300px;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-links {
+  margin-top: 10px; /* Reduced gap */
+  margin-left: 500px;
+  text-align: right; /* Align links to the right */
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+/* Change the color of all links to white */
+.footer-links a {
+  color: white;
+  text-decoration: none; /* Remove underlines */
+}
+
+.additional-links {
+  margin-top: 10px; /* Reduced gap */
+  margin-right: 50px;
+  text-align: right; /* Align links to the right */
+}
+
+.additional-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.additional-links ul li {
+  margin-bottom: 10px;
+}
+
+/* Change the color of all links to white */
+.additional-links a {
+  color: white;
+  text-decoration: none; /* Remove underlines */
+}
+
+.footer-bottom {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-bottom-links a {
+  color: white;
+  font-size: 14px; /* Reduce font size for smaller screens */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px; /* Reduce font size for smaller screens */
+}
+
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.footer-bottom ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.footer-social {
+  margin-top: 60px;
+}
+
+.footer-social i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+.footer{
+  max-height: 100%;
+}
+.footer-links {
+      margin-left: 0; /* Reset margin for smaller screens */
+      text-align: left; /* Align links to the left */
+      font-size: 12px; /* Reduce font size further for smaller screens */
+
+  }
+
+  .additional-links {
+      margin-right: 0; /* Reset margin for smaller screens */
+      text-align: left; /* Align links to the left */
+      font-size: 12px; /* Reduce font size further for smaller screens */
+
+      
+
+  }
+  .footer-container p{
+    font-size: 12px;
+  }
+  .footer-logo {
+    max-width: 100px;
+  }
+  
+  .footer-bottom-links a {
+      font-size: 8px
+      px; /* Reduce font size further for smaller screens */
+  }
+
+  .footer-bottom p {
+      font-size: 8px; /* Reduce font size further for smaller screens */
+  }
+}
