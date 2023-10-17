@@ -595,7 +595,7 @@ footer {
 @media screen and (max-width: 768px) {
 .footer{
   max-height: 100%;
-margin-top:300px;
+margin-top:450px;
 }
 .footer-links {
       margin-left: 0; /* Reset margin for smaller screens */
