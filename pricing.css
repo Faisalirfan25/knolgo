@@ -222,6 +222,7 @@
 
  /* Close button style */
  .popup-close-button {
+margin-top:10px;
   background-color: #303339;
   color: #fff;
   border: none;
